@@ -1,5 +1,18 @@
 import { toast } from "react-toastify";
 
+// Initialize ApperClient for Edge function calls
+let apperClientForEdgeFunctions = null;
+const initializeEdgeFunctionClient = () => {
+  if (!apperClientForEdgeFunctions && typeof window !== 'undefined' && window.ApperSDK) {
+    const { ApperClient } = window.ApperSDK;
+    apperClientForEdgeFunctions = new ApperClient({
+      apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+      apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+    });
+  }
+  return apperClientForEdgeFunctions;
+};
+
 class ContactService {
   constructor() {
     this.tableName = 'contact_c';
@@ -100,7 +113,7 @@ class ContactService {
     try {
       if (!this.apperClient) this.initializeClient();
       
-      const fullName = `${contactData.firstName || ''} ${contactData.lastName || ''}`.trim();
+const fullName = `${contactData.firstName || ''} ${contactData.lastName || ''}`.trim();
       
       const params = {
         records: [{
@@ -130,7 +143,7 @@ class ContactService {
         
         if (successful.length > 0) {
           const createdContact = successful[0].data;
-          return {
+          const contactResult = {
             Id: createdContact.Id,
             firstName: contactData.firstName || '',
             lastName: contactData.lastName || '',
@@ -142,6 +155,13 @@ class ContactService {
             createdAt: createdContact.CreatedOn || new Date().toISOString(),
             lastActivity: new Date().toISOString()
           };
+
+          // Send welcome email asynchronously - don't block contact creation
+          this.sendWelcomeEmail(contactResult).catch(error => {
+            console.info(`Email sending failed for contact ${createdContact.Id}: ${error.message}`);
+          });
+
+          return contactResult;
         }
       }
       return null;
