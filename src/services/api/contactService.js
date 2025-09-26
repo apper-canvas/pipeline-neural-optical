@@ -304,6 +304,30 @@ const fullName = `${contactData.firstName || ''} ${contactData.lastName || ''}`.
       return [];
     }
   }
+async sendWelcomeEmail(contactData) {
+    try {
+      const edgeFunctionClient = initializeEdgeFunctionClient();
+      if (!edgeFunctionClient) {
+        throw new Error('Edge function client not available');
+      }
+
+      const result = await edgeFunctionClient.functions.invoke(import.meta.env.VITE_SEND_CONTACT_WELCOME_EMAIL, {
+        body: contactData,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!result.success) {
+        console.info(`apper_info: An error was received in this function: ${import.meta.env.VITE_SEND_CONTACT_WELCOME_EMAIL}. The response body is: ${JSON.stringify(result)}.`);
+      }
+
+      return result;
+    } catch (error) {
+      console.info(`apper_info: An error was received in this function: ${import.meta.env.VITE_SEND_CONTACT_WELCOME_EMAIL}. The error is: ${error.message}`);
+      throw error;
+    }
+  }
 }
 
 export default new ContactService();
