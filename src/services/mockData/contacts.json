@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john.smith@techcorp.com",
+    "phone": "(555) 123-4567",
+    "companyId": 1,
+    "title": "VP of Sales",
+    "notes": "Key decision maker for enterprise deals. Prefers email communication.",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "lastActivity": "2024-01-20T14:22:00Z"
+  },
+  {
+    "Id": 2,
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "email": "s.johnson@innovate.io",
+    "phone": "(555) 234-5678",
+    "companyId": 2,
+    "title": "Marketing Director",
+    "notes": "Interested in marketing automation solutions. Budget approved for Q1.",
+    "createdAt": "2024-01-12T09:15:00Z",
+    "lastActivity": "2024-01-19T11:45:00Z"
+  },
+  {
+    "Id": 3,
+    "firstName": "Michael",
+    "lastName": "Brown",
+    "email": "mbrown@dataworks.net",
+    "phone": "(555) 345-6789",
+    "companyId": 3,
+    "title": "CTO",
+    "notes": "Technical decision maker. Requires detailed product demos.",
+    "createdAt": "2024-01-10T16:20:00Z",
+    "lastActivity": "2024-01-18T13:30:00Z"
+  },
+  {
+    "Id": 4,
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emily.davis@financeplus.com",
+    "phone": "(555) 456-7890",
+    "companyId": 4,
+    "title": "Finance Manager",
+    "notes": "Evaluating cost-saving solutions. Looking for ROI analysis.",
+    "createdAt": "2024-01-08T11:10:00Z",
+    "lastActivity": "2024-01-17T16:20:00Z"
+  },
+  {
+    "Id": 5,
+    "firstName": "David",
+    "lastName": "Wilson",
+    "email": "dwilson@healthtech.org",
+    "phone": "(555) 567-8901",
+    "companyId": 5,
+    "title": "Operations Director",
+    "notes": "Compliance-focused buyer. Needs security documentation.",
+    "createdAt": "2024-01-05T14:45:00Z",
+    "lastActivity": "2024-01-16T09:15:00Z"
+  },
+  {
+    "Id": 6,
+    "firstName": "Lisa",
+    "lastName": "Anderson",
+    "email": "lisa@retailmax.com",
+    "phone": "(555) 678-9012",
+    "companyId": 6,
+    "title": "CEO",
+    "notes": "Looking for comprehensive business solutions. High-value prospect.",
+    "createdAt": "2024-01-03T08:30:00Z",
+    "lastActivity": "2024-01-15T12:00:00Z"
+  },
+  {
+    "Id": 7,
+    "firstName": "Robert",
+    "lastName": "Taylor",
+    "email": "rtaylor@techcorp.com",
+    "phone": "(555) 789-0123",
+    "companyId": 1,
+    "title": "IT Manager",
+    "notes": "Technical implementer. Works closely with John Smith on deals.",
+    "createdAt": "2024-01-01T13:20:00Z",
+    "lastActivity": "2024-01-14T15:45:00Z"
+  },
+  {
+    "Id": 8,
+    "firstName": "Jennifer",
+    "lastName": "Martinez",
+    "email": "j.martinez@innovate.io",
+    "phone": "(555) 890-1234",
+    "companyId": 2,
+    "title": "Product Manager",
+    "notes": "Evaluating integration capabilities. Technical background.",
+    "createdAt": "2023-12-28T10:00:00Z",
+    "lastActivity": "2024-01-13T14:30:00Z"
+  },
+  {
+    "Id": 9,
+    "firstName": "William",
+    "lastName": "Garcia",
+    "email": "wgarcia@dataworks.net",
+    "phone": "(555) 901-2345",
+    "companyId": 3,
+    "title": "Data Analyst",
+    "notes": "End user of analytics tools. Provides valuable feedback.",
+    "createdAt": "2023-12-25T15:30:00Z",
+    "lastActivity": "2024-01-12T11:20:00Z"
+  },
+  {
+    "Id": 10,
+    "firstName": "Amanda",
+    "lastName": "Rodriguez",
+    "email": "arodriguez@financeplus.com",
+    "phone": "(555) 012-3456",
+    "companyId": 4,
+    "title": "Accounting Supervisor",
+    "notes": "Process-oriented buyer. Focuses on efficiency improvements.",
+    "createdAt": "2023-12-22T12:15:00Z",
+    "lastActivity": "2024-01-11T10:45:00Z"
+  }
+]
